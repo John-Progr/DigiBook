@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+   
+    <link rel="stylesheet" href="css/form.css"/>
+    
+    <title>Digibook:Your Favourite Books list</title>
+</head>
+<body>
+        <header>
+            <h1 id="xax">Edit your Favourite Book</h1>
+            </header>
+            
+  
+            
+        <main id="info">
+            
+          <section class="form">
+            <details>
+              <summary>You can edit your book to your prefernces</summary>
+              <ul>
+                <li>only title and author name are allowed!</li>
+                <li>you can add a review if you like!</li>
+              </ul>
+            </details>
+            <h3 class="create">Go ahead!</h3>
+            <form  action="/editbook"  method="POST">                         
+               <fieldset>
+
+                    <label for="work_id">Work_id</label>
+                    <input type="text" id="work_id" name="work_id" placeholder="" readonly><br><br>
+                    <label for="Author">Author</label>
+                    <input type="text" id="Author" name="Author" placeholder="" readonly>
+                    <button type="button" id="author_button" onclick="editClick('Author')">Edit</button><br><br>
+                    <label for="email">Title</label>
+                    <input  type="text" id="Title" name="Title" placeholder="" readonly>
+                    <button type="button" id="title_button" onclick="editClick('Title')">Edit</button><br><br>
+                    <label for="address">Review</label>
+                    <textarea id="review" name="review" class="form-control"  placeholder="Add a review..."></textarea>
+                   
+                    
+
+
+             </fieldset>
+
+             <button id="submit">Sumbit</button>
+             </form>
+  
+
+
+
+    
+
+</body>
+<script src="js/form.js"></script>
+</html>
