@@ -18,6 +18,7 @@ app.use(express.urlencoded({extended: false}))
 //var bodyParser = require("body-parser");
 //app.use(bodyParser.urlencoded({ extended: false }));
 //app.use(bodyParser.json());
+
 var bookdatabase=new bookDAO()
 app.get('/', function(req, res){
 
@@ -30,10 +31,10 @@ app.get('/', function(req, res){
   })
 });
 //app.use(express.static('public'));
-app.post('/addbook',function(request,response){
+app.post('/addbook/:workid',function(request,response){
   console.log('i got a request')
-  
-bookdatabase.addBook(new book(request.body['work_id'],request.body['author'],request.body['title'],'')).then(function(result){
+  console.log(request.params)
+bookdatabase.addBook(new book(request.params['workid'],request.body['author'],request.body['title'],'')).then(function(result){
   if(result=='ok'){
     response.status(201).send('ok')
   }else{
