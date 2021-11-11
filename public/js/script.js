@@ -87,19 +87,19 @@ function btn_del(save_id,del_id,id,p_mess){
 function addBook(work_id,author,title,p_mess){
 console.log(p_mess);
 console.log(title);
-  var obj={work_id:work_id,author:author,title:title};
+  var obj={author:author,title:title};
   var json_obj=JSON.stringify(obj);
   console.log(json_obj);
 
-
+ console.log(work_id)
   const options={
     method:'POST',
     headers: { "Content-Type": "application/json"},
     body: json_obj
     
   }
-  console.log('hello firend');
-  fetch('/addbook ',options).
+
+  fetch(`/addbook/${work_id} `,options).
   then(response=>response.text()).then(data=>{
     console.log(data);
     if(data=='ok'){
