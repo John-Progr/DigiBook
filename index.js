@@ -34,7 +34,7 @@ app.get('/', function(req, res){
 app.post('/addbook/:workid',function(request,response){
   console.log('i got a request')
   console.log(request.params)
-bookdatabase.addBook(new book(request.params['workid'],request.body['author'],request.body['title'],'')).then(function(result){
+bookdatabase.addBook(new book(request.params['workid'],request.body['author'],request.body['title'])).then(function(result){
   if(result=='ok'){
     response.status(201).send('ok')
   }else{
